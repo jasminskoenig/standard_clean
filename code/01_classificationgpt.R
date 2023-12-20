@@ -215,6 +215,8 @@ articles_gpt_final |>
   left_join(annotated_art_sel, by = "id") ->
   articles_gpt_final_corrected
 
+saveRDS(articles_gpt_final_corrected, "data/articles_final.rds")
+
 # back to paragraph to renew conflation matrix
 articles_gpt_final_corrected |> 
   separate_rows(article, sep = "\n") |> 
